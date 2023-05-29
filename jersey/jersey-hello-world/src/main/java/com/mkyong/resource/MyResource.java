@@ -2,10 +2,7 @@ package com.mkyong.resource;
 
 import com.mkyong.service.MessageService;
 import jakarta.inject.Inject;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
 @Path("/hello")
@@ -16,10 +13,20 @@ public class MyResource {
     private MessageService messageService;
 
     // output text
+    @POST
+    @Produces("application/json")
+    @Consumes("application/json")
+    public Reza hello(Reza reza) {
+        System.out.println(reza.getName() + "%%%%%%%%%%%%%%%%");
+        System.out.println(reza.getBirthDate() + "%%%%%%%%%%%%%%%%");
+        return new Reza();
+    }
+
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        return "Jersey hello world example.";
+    @Produces("application/json")
+    @Consumes("application/json")
+    public Reza hello() {
+        return new Reza();
     }
 
     // output text with argument

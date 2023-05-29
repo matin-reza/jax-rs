@@ -15,7 +15,7 @@ public class MainApp {
     private static final Logger LOGGER = Logger.getLogger(MainApp.class.getName());
 
     // we start at port 8080
-    public static final String BASE_URI = "http://localhost:8080/";
+    public static final String BASE_URI = "http://localhost:8082/";
 
     // Starts Grizzly HTTP server
     public static HttpServer startServer() {
